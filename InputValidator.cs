@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Xps.Serialization;
 
 namespace RandomNameChooser
 {
     class InputValidator
     {
-        public static ValidationResult Validate(String text, String[] names)
+        public static ValidationResult Validate(String text, String[] strings)
         {
             if (text.Length > 0)
             {
-                if (names.Length > 1)
+                if (strings.Length > 1)
                 {
-                    foreach(String name in names)
+                    foreach(String subString in strings)
                     {
-                        if(name.Length == 0)
+                        if (subString.Length == 0 || subString.Equals("\r"))
                         {
-                            return ValidationResult.NewLineAtEndOfInput;
+                            return ValidationResult.EmptyStringDetected;
                         }
                     }
 

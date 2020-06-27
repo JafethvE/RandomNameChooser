@@ -48,9 +48,9 @@ namespace RandomNameChooser
                     ChosenNameTextBlock.Foreground = red;
                     ChosenNameTextBlock.Text = "Please fill in at least two names.";
                     break;
-                case ValidationResult.NewLineAtEndOfInput:
+                case ValidationResult.EmptyStringDetected:
                     ChosenNameTextBlock.Foreground = red;
-                    ChosenNameTextBlock.Text = "Remove newline at end of input.";
+                    ChosenNameTextBlock.Text = "At least one name is empty.";
                     break;
                 default:
                     ChosenNameTextBlock.Text = "";

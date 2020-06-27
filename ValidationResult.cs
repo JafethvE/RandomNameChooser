@@ -9,6 +9,6 @@ namespace RandomNameChooser
         Valid,
         NoData,
         InsufficientData,
-        NewLineAtEndOfInput
+        EmptyStringDetected
     }
 }
