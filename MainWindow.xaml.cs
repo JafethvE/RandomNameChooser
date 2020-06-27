@@ -32,24 +32,29 @@ namespace RandomNameChooser
         private void ChooseRandomString()
         {
             String text = NamesTextBox.Text;
-            if (text.Length > 0)
+            String[] names = stringSplitter.SplitStringOnSplitter(text, "\n");
+
+            switch(InputValidator.Validate(text, names))
             {
-                String[] names = stringSplitter.SplitStringOnSplitter(text, "\n");
-                if (names.Length > 1)
-                {
+                case ValidationResult.Valid:
                     ChosenNameTextBlock.Foreground = black;
                     ChosenNameTextBlock.Text = randomNameString.ChooseRandomString(names);
-                }
-                else
-                {
+                    break;
+                case ValidationResult.NoData:
+                    ChosenNameTextBlock.Foreground = red;
+                    ChosenNameTextBlock.Text = "Input is empty.";
+                    break;
+                case ValidationResult.InsufficientData:
                     ChosenNameTextBlock.Foreground = red;
                     ChosenNameTextBlock.Text = "Please fill in at least two names.";
-                }
-            }
-            else
-            {
-                ChosenNameTextBlock.Foreground = red;
-                ChosenNameTextBlock.Text = "Input is empty.";
+                    break;
+                case ValidationResult.NewLineAtEndOfInput:
+                    ChosenNameTextBlock.Foreground = red;
+                    ChosenNameTextBlock.Text = "Remove newline at end of input.";
+                    break;
+                default:
+                    ChosenNameTextBlock.Text = "";
+                    break;
             }
         }
     }
