@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RandomNameChooser
 {
@@ -23,11 +12,16 @@ namespace RandomNameChooser
         private StringSplitter stringSplitter;
 
         private RandomStringChooser randomNameString;
+
+        private SolidColorBrush red;
+        private SolidColorBrush black;
         public MainWindow()
         {
             InitializeComponent();
             stringSplitter = new StringSplitter();
             randomNameString = new RandomStringChooser();
+            red = new SolidColorBrush(Colors.Red);
+            black = new SolidColorBrush(Colors.Black);
         }
 
         private void ChooseNameButton_Click(object sender, RoutedEventArgs e)
@@ -43,15 +37,18 @@ namespace RandomNameChooser
                 String[] names = stringSplitter.SplitStringOnSplitter(text, "\n");
                 if (names.Length > 1)
                 {
+                    ChosenNameTextBlock.Foreground = black;
                     ChosenNameTextBlock.Text = randomNameString.ChooseRandomString(names);
                 }
                 else
                 {
+                    ChosenNameTextBlock.Foreground = red;
                     ChosenNameTextBlock.Text = "Please fill in at least two names.";
                 }
             }
             else
             {
+                ChosenNameTextBlock.Foreground = red;
                 ChosenNameTextBlock.Text = "Input is empty.";
             }
         }

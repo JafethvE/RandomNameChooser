@@ -10,7 +10,7 @@
     <Grid Margin="10,0,10,10">
         <TextBlock x:Name="NamesTextBlock" HorizontalAlignment="Center" Margin="0,10,0,0" Text="Names" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"/>
         <TextBox x:Name="NamesTextBox" HorizontalAlignment="Center" Margin="0,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Height="293" TextAlignment="Left" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" ToolTip="Fill in all names seperated by newlines."/>
-        <TextBlock x:Name="ChosenNameTextBlock" HorizontalAlignment="Center" Margin="0,329,0,0" Text="" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Height="22" Width="202"/>
+        <TextBlock x:Name="ChosenNameTextBlock" HorizontalAlignment="Center" Margin="0,329,0,0" Text="" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Height="22" Width="202" Foreground="Black"/>
         <Button x:Name="ChooseNameButton" Content="Choose" HorizontalAlignment="Right" Margin="0,356,10,0" VerticalAlignment="Top" Click="ChooseNameButton_Click" ToolTip="Choose a random name"/>
     </Grid>
 </Window>
