@@ -4,7 +4,7 @@ namespace RandomNameChooser
 {
     public class InputValidator
     {
-        private StringSplitter stringSplitter;
+        private readonly StringSplitter stringSplitter;
 
         public InputValidator()
         {

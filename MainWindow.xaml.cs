@@ -9,12 +9,12 @@ namespace RandomNameChooser
     /// </summary>
     public partial class MainWindow : Window
     {
-        private RandomStringChooser randomNameString;
+        private readonly RandomStringChooser randomNameString;
 
-        private InputValidator inputValidator;
+        private readonly InputValidator inputValidator;
 
-        private SolidColorBrush red;
-        private SolidColorBrush black;
+        private readonly SolidColorBrush red;
+        private readonly SolidColorBrush black;
         public MainWindow()
         {
             InitializeComponent();

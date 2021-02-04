@@ -4,7 +4,7 @@ namespace RandomNameChooser
 {
     public class RandomStringChooser
     {
-        Random random;
+        private readonly Random random;
 
         public RandomStringChooser()
         {
