@@ -9,17 +9,17 @@ namespace RandomNameChooser
     /// </summary>
     public partial class MainWindow : Window
     {
-        private StringSplitter stringSplitter;
-
         private RandomStringChooser randomNameString;
+
+        private InputValidator inputValidator;
 
         private SolidColorBrush red;
         private SolidColorBrush black;
         public MainWindow()
         {
             InitializeComponent();
-            stringSplitter = new StringSplitter();
             randomNameString = new RandomStringChooser();
+            inputValidator = new InputValidator();
             red = new SolidColorBrush(Colors.Red);
             black = new SolidColorBrush(Colors.Black);
         }
@@ -32,9 +32,9 @@ namespace RandomNameChooser
         private void ChooseRandomString()
         {
             String text = NamesTextBox.Text;
-            String[] names = stringSplitter.SplitStringOnSplitter(text, "\n");
+            String[] names = { };
 
-            switch(InputValidator.Validate(text, names))
+            switch(inputValidator.Validate(text, ref names))
             {
                 case ValidationResult.Valid:
                     ChosenNameTextBlock.Foreground = black;

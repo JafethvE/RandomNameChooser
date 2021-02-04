@@ -1,6 +1,6 @@
 ﻿namespace RandomNameChooser
 {
-    enum ValidationResult
+    public enum ValidationResult
     {
         Valid,
         NoData,

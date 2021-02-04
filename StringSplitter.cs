@@ -2,7 +2,7 @@
 
 namespace RandomNameChooser
 {
-    class StringSplitter
+    public class StringSplitter
     {
         public String[] SplitStringOnSplitter(String singleString, String splitter)
         {

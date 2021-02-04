@@ -2,7 +2,7 @@
 
 namespace RandomNameChooser
 {
-    class RandomStringChooser
+    public class RandomStringChooser
     {
         Random random;
 
