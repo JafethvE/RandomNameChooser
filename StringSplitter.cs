@@ -2,9 +2,9 @@
 
 namespace RandomNameChooser
 {
-    class StringSplitter
+    public class StringSplitter
     {
-        public String[] SplitStringOnSplitter(String singleString, String splitter)
+        public string[] SplitStringOnSplitter(string singleString, string splitter)
         {
             return singleString.Split(splitter);
         }
